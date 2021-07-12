@@ -1,3 +1,4 @@
+const { resolve } = require('path')
 const path = require('path')
 
 module.exports = {
@@ -6,6 +7,7 @@ module.exports = {
         path: path.join(__dirname, '/public'),
         filename: 'bundle.js',
     },
+    // entry: './src/index.js',
     // webpack 5 comes with devServer which loads in development mode
     devServer: {
         contentBase: path.join(__dirname, '/public'),
@@ -20,8 +22,11 @@ module.exports = {
                 exclude: /nodeModules/,
                 use: {
                     loader: 'babel-loader'
-                }
-            }
-        ]
-    }
-}
+                },
+            },
+        ],
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
+};
