@@ -24,9 +24,16 @@ module.exports = {
                     loader: 'babel-loader'
                 },
             },
+            {
+                test: /\.css$/,
+                exclude: /nodeModules/,
+                use: {
+                    loader: 'css-loader'
+                },
+            },
         ],
     },
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.css'],
     },
 };
